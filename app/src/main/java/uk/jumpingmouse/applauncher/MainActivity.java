@@ -60,31 +60,31 @@ public class MainActivity extends AppCompatActivity {
      * @param view the app button which was clicked
      */
     public void appButtonClick(View view) {
-        String appName;
+        int appNameResource;
         switch (view.getId()) {
             case R.id.btnBuildItBigger:
-                appName = getString(R.string.build_it_bigger_appname);
+                appNameResource = R.string.build_it_bigger_appname;
                 break;
             case R.id.btnCapstone:
-                appName = getString(R.string.capstone_appname);
+                appNameResource = R.string.capstone_appname;
                 break;
             case R.id.btnLibrary:
-                appName = getString(R.string.library_appname);
+                appNameResource = R.string.library_appname;
                 break;
             case R.id.btnScores:
-                appName = getString(R.string.scores_appname);
+                appNameResource = R.string.scores_appname;
                 break;
             case R.id.btnSpotifyStreamer:
-                appName = getString(R.string.spotify_streamer_appname);
+                appNameResource = R.string.spotify_streamer_appname;
                 break;
             case R.id.btnXyzReader:
-                appName = getString(R.string.xyz_reader_appname);
+                appNameResource = R.string.xyz_reader_appname;
                 break;
             default:
                 displayToast(getString(R.string.error_unhandled_button) + view.getId());
                 return;
         }
-        displayToast(String.format(getString(R.string.app_launch_message), appName));
+        displayToast(String.format(getString(R.string.app_launch_message), getString(appNameResource)));
     }
 
     /**
