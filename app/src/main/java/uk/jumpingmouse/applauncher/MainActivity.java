@@ -4,7 +4,9 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 
@@ -19,6 +21,32 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // Create a click listener for the buttons.
+        // The project instructions say that the buttons should respond to a touch event,
+        // but that seems inappropriate to me, responding to a click is enough.
+        View.OnClickListener buttonClickListener = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                appButtonClick(view);
+            }
+        };
+
+        // Get a reference to each app button
+        Button btnBuildItBigger = (Button) findViewById(R.id.btnBuildItBigger);
+        Button btnCapstone = (Button) findViewById(R.id.btnCapstone);
+        Button btnLibrary = (Button) findViewById(R.id.btnLibrary);
+        Button btnScores = (Button) findViewById(R.id.btnScores);
+        Button btnSpotifyStreamer = (Button) findViewById(R.id.btnSpotifyStreamer);
+        Button btnXyzReader = (Button) findViewById(R.id.btnXyzReader);
+
+        // Set the click listener for each app button
+        btnBuildItBigger.setOnClickListener(buttonClickListener);
+        btnCapstone.setOnClickListener(buttonClickListener);
+        btnLibrary.setOnClickListener(buttonClickListener);
+        btnScores.setOnClickListener(buttonClickListener);
+        btnSpotifyStreamer.setOnClickListener(buttonClickListener);
+        btnXyzReader.setOnClickListener(buttonClickListener);
     }
 
     /**
