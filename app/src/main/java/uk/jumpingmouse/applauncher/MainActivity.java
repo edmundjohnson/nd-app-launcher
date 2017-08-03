@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -33,12 +32,12 @@ public class MainActivity extends AppCompatActivity {
         };
 
         // Get a reference to each app button
-        Button btnBuildItBigger = (Button) findViewById(R.id.btnBuildItBigger);
-        Button btnCapstone = (Button) findViewById(R.id.btnCapstone);
-        Button btnLibrary = (Button) findViewById(R.id.btnLibrary);
-        Button btnScores = (Button) findViewById(R.id.btnScores);
-        Button btnSpotifyStreamer = (Button) findViewById(R.id.btnSpotifyStreamer);
-        Button btnXyzReader = (Button) findViewById(R.id.btnXyzReader);
+        Button btnBuildItBigger = findViewById(R.id.btnBuildItBigger);
+        Button btnCapstone = findViewById(R.id.btnCapstone);
+        Button btnLibrary = findViewById(R.id.btnLibrary);
+        Button btnScores = findViewById(R.id.btnScores);
+        Button btnSpotifyStreamer = findViewById(R.id.btnSpotifyStreamer);
+        Button btnXyzReader = findViewById(R.id.btnXyzReader);
 
         // Set the click listener for each app button
         btnBuildItBigger.setOnClickListener(buttonClickListener);
@@ -87,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
      * This method handles the clicking of an app button.
      * @param view the app button which was clicked
      */
-    public void appButtonClick(View view) {
+    private void appButtonClick(View view) {
         int appNameResource;
         switch (view.getId()) {
             case R.id.btnBuildItBigger:
